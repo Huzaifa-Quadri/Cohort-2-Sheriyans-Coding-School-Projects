@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .try {
+        position: absolute;
+        transform: translate(50%, 50%);
+
+        height: 300px;
+        width: 300px;
+
+        clip-path: polygon(
+          10% 25%,
+          35% 25%,
+          35% 0%,
+          65% 0%,
+          65% 25%,
+          90% 25%,
+          90% 50%,
+          35% 25%,
+          65% 100%,
+          35% 100%,
+          65% 25%,
+          10% 50%
+        );
+
+        background-color: orangered;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Hello</h1>
+    <div class="try"></div>
+  </body>
+</html>

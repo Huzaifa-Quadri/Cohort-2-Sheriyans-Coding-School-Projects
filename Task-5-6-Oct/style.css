@@ -1,0 +1,331 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+  background-color: #111111;
+  color: white;
+}
+
+.blank {
+  height: 200px;
+}
+
+#nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 120px;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+#nav h2 {
+  text-transform: uppercase;
+}
+#nav ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  background-color: #191a15;
+  /* border: 2px solid white; */
+  padding: 12px 25px;
+  border-radius: 50px;
+}
+
+#nav a {
+  text-decoration: none;
+  color: white;
+}
+
+#nav a:hover {
+  color: yellow;
+  text-decoration: underline;
+}
+
+#connect button {
+  /* display: flex; */
+  /* flex-direction: column; */
+  gap: 10px;
+  padding: 10px 20px;
+  background-color: transparent;
+  border: 1px solid yellow;
+  border-radius: 40px;
+  color: white;
+  margin-left: 20px;
+}
+
+.main {
+  width: 100%;
+  /* height: ; */
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.cover-nft #bg {
+  height: 800px;
+  /* wi */
+}
+
+.cover-nft #img {
+  height: 700px;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.main h1 {
+  text-align: center;
+  font-size: 5rem;
+  line-height: 1.2;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 200;
+}
+
+.main h1 span {
+  font-weight: bold;
+}
+
+#arrow {
+  position: absolute;
+  height: 250px;
+  top: 15%;
+  left: 28%;
+  transform: rotate(-20deg);
+}
+
+.bns {
+  height: 300px;
+  /* border: 1px solid white; */
+  position: absolute;
+  left: 5%;
+  top: 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.bns img {
+  height: 200px;
+}
+
+.bns #circle {
+  background-color: #171617;
+  height: 300px;
+  /* border: 1px solid yellow; */
+  border-radius: 50%;
+  padding: 10px;
+}
+
+.bns p {
+  font-size: 20px;
+}
+
+.rating {
+  width: 15%;
+  position: absolute;
+  left: 80%;
+  /* bottom: 20%; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* border: 1px solid yellow; */
+}
+.rating h2 {
+  font-size: 80px;
+}
+
+.rating p {
+  font-size: 25px;
+}
+
+.rating img {
+  margin-top: 50px;
+  height: 150px;
+  animation: spin 7s linear infinite;
+  /* ↑ 5s per rotation, linear = smooth constant speed, infinite loop */
+}
+
+@keyframes spin {
+  from {
+    transform: rotateZ(0deg);
+  }
+  to {
+    transform: rotateZ(360deg);
+  }
+}
+
+.rating p {
+  color: #aeb776;
+}
+
+hr {
+  margin: 30px 0px;
+  width: 100%;
+  /* color: red; Not applicable anymore as we have to use border or background-color with border : none */
+  border: 1px solid yellow;
+}
+
+.page {
+  width: 100%;
+  background-color: black;
+  /* display: relative; */
+  /* border: 1px solid orangered; */
+}
+
+#arrow2 {
+  position: absolute;
+  height: 150px;
+  /* bottom: 0%; */
+  top: 125%;
+  left: 15%;
+  transform: rotate(-20deg);
+}
+
+.page .header {
+  display: flex;
+  margin: 0px 80px;
+  padding: 80px 0px;
+  /* justify-content: center; */
+  justify-content: space-between;
+  align-items: center;
+}
+.butt {
+  display: flex;
+  gap: 30px;
+}
+.butt button {
+  height: 100px;
+  width: 100px;
+  border-radius: 20px;
+  font-size: 50px;
+  background-color: black;
+  color: white;
+}
+#sec {
+  background-color: white;
+  color: black;
+}
+.header p {
+  font-size: 20px;
+}
+
+.header span {
+  font-size: 50px;
+}
+/* ------------------------------------------------------------------------------------ */
+
+.parent-card {
+  height: 800px;
+  /* border: 1px solid salmon; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+}
+
+.card-button {
+  height: 50px;
+  width: 40%;
+  background-color: #1b1c1e;
+  border-radius: 10px;
+  color: rgba(255, 255, 255, 0.647);
+  box-shadow: 5px 5px lightblue;
+  font-size: 20px;
+}
+
+#cb1 {
+  box-shadow: 5px 5px #8c01fa;
+}
+#cb2 {
+  box-shadow: 5px 5px #d5f903;
+}
+#cb3 {
+  box-shadow: 5px 5px #f96a02;
+}
+
+/* ------------------------------------------------------------------------------------- */
+
+.cards {
+  display: flex;
+  gap: 50px;
+  margin: 30px 50px;
+  margin-top: 80px;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.cards .card {
+  height: 650px;
+  width: 500px;
+  border-radius: 20px;
+  background-color: #1b1c1e;
+  border: 2px solid #383838;
+  position: relative;
+}
+.cards .inner-card {
+  height: 90%;
+  width: 100%;
+  clip-path: polygon(
+    43.03% 5.93%,
+    6.65% 5.93%,
+    6.65% 63.95%,
+    6.65% 98.75%,
+    88.8% 98.75%,
+    88.8% 23.08%,
+    62.7% 23.08%
+  );
+  background-color: #8c01fa;
+  position: relative;
+  z-index: 10px;
+}
+
+.card .countdown {
+  position: absolute;
+  right: 10%;
+  top: 5%;
+}
+
+.countdown #time {
+  font-size: 25px;
+}
+
+.value {
+  height: 7%;
+  width: 45%;
+  position: absolute;
+  z-index: 40px;
+  background-color: #1b1c1e;
+  border-radius: 10px;
+  bottom: 0%;
+  left: 6.5%;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  font-size: 30px;
+}
+
+.inner-card img {
+  position: absolute;
+  height: 80%;
+  bottom: 0%;
+  z-index: 20px;
+  /* right: 1.5%; */
+}
+.card #c2 {
+  background-color: #d5f903;
+}
+.card #c3 {
+  background-color: #f96a02;
+}
+
+.endin {
+  color: grey;
+}

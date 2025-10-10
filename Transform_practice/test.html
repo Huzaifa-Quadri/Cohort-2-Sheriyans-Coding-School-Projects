@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blur Rise Effect</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #111;
+      }
+
+      .cont {
+        height: 600px;
+        width: 700px;
+        border-radius: 10px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      /* Main background image */
+      .cont > img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        transition: all ease 1s;
+      }
+
+      /* 🔹 Independent blur overlay */
+      .blur-layer {
+        position: absolute;
+        inset: 0;
+        transition: all ease 1s;
+        z-index: 1;
+      }
+
+      /* 🔹 Solo image container */
+      .solo {
+        position: absolute;
+        bottom: -100%;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: bottom ease 1s;
+        z-index: 2;
+      }
+
+      /* When hovered, both animations trigger simultaneously */
+      .cont:hover .blur-layer {
+        backdrop-filter: blur(10px);
+      }
+      .cont:hover .solo {
+        bottom: 0%;
+      }
+
+      /* Solo image */
+      .solo img {
+        height: 95%;
+        object-fit: contain;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="cont">
+      <img
+        src="https://cf-images.us-east-1.prod.boltdns.net/v1/static/5359769168001/0a823cb0-01a9-4835-a348-c64187783ccb/d37cb96c-805c-4aa2-9f2f-e62d9eb814c7/1280x720/match/image.jpg"
+        alt="background"
+      />
+      <div class="blur-layer"></div>
+      <div class="solo">
+        <img src="Captain America solo.png" alt="cap" />
+      </div>
+    </div>
+  </body>
+</html>
