@@ -1,0 +1,129 @@
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+.Page {
+  border: 3px solid black;
+}
+
+#pg1 {
+  height: 100%;
+  width: 100%;
+  display: grid;
+
+  grid-template-columns: 0.25fr 1fr;
+  grid-template-rows: 10vh 35vh 1fr;
+
+  grid-template-areas: "nb nb" "s1 s2" "cp cp";
+
+  #navbar {
+    grid-area: nb;
+    background-color: pink;
+    /* ... */
+  }
+
+  #sec1 {
+    grid-area: s1;
+    background-color: bisque;
+    /* ... */
+  }
+
+  #sec2 {
+    grid-area: s2;
+    background-color: brown;
+  }
+
+  .coverpic {
+    grid-area: cp;
+    background-color: blue;
+    /* .... */
+  }
+}
+
+#pg2 {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 40% 60%;
+  grid-template-areas: "st" "Ab";
+
+  #stats {
+    grid-area: st;
+    background-color: gold;
+    /* ... */
+  }
+
+  #About {
+    grid-area: Ab;
+    background-color: purple;
+  }
+}
+
+#expretise {
+  height: 20vh;
+  width: 100%;
+}
+
+#pg3 {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas:
+    "c1 c2 c3 c4"
+    "c5 c6 c7 c8";
+
+  grid-row-gap: 10px;
+  grid-column-gap: 15px;
+
+  #card1 {
+    grid-area: c1;
+    background-color: darkred;
+  }
+
+  #card2 {
+    grid-area: c2;
+    background-color: darkcyan;
+  }
+
+  #card3 {
+    grid-area: c3;
+    background-color: darkgoldenrod;
+  }
+
+  #card4 {
+    grid-area: c4;
+    background-color: darkgray;
+  }
+
+  #card5 {
+    grid-area: c5;
+    background-color: darkgreen;
+  }
+
+  #card6 {
+    grid-area: c6;
+    background-color: darkkhaki;
+  }
+
+  #card7 {
+    grid-area: c7;
+    background-color: darkmagenta;
+  }
+
+  #card8 {
+    grid-area: c8;
+    background-color: darkolivegreen;
+  }
+}
+//!  INCOMPLETE TASK

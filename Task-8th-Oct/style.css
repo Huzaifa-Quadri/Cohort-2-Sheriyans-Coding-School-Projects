@@ -3,6 +3,7 @@
   padding: 0%;
   box-sizing: border-box;
 }
+
 html,
 body {
   width: 100%;
@@ -17,24 +18,25 @@ body {
   height: 100%;
   width: 100%;
   display: grid;
-
   grid-template-columns: 0.25fr 1fr;
   grid-template-rows: 10vh 35vh 1fr;
-
   grid-template-areas: "nb nb" "s1 s2" "cp cp";
 }
-#navbar {
+#pg1 #navbar {
   grid-area: nb;
   background-color: pink;
   /* ... */
 }
-#sec1 {
+#pg1 #sec1 {
   grid-area: s1;
   background-color: bisque;
   /* ... */
 }
-
-.coverpic {
+#pg1 #sec2 {
+  grid-area: s2;
+  background-color: brown;
+}
+#pg1 .coverpic {
   grid-area: cp;
   background-color: blue;
   /* .... */
@@ -48,16 +50,19 @@ body {
   grid-template-rows: 40% 60%;
   grid-template-areas: "st" "Ab";
 }
-
-#stats {
+#pg2 #stats {
   grid-area: st;
   background-color: gold;
   /* ... */
 }
-
-#About {
+#pg2 #About {
   grid-area: Ab;
   background-color: purple;
+}
+
+#expretise {
+  height: 20vh;
+  width: 100%;
 }
 
 #pg3 {
@@ -65,6 +70,40 @@ body {
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 15% 1fr 1fr;
-  grid-template-areas: "";
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: "c1 c2 c3 c4" "c5 c6 c7 c8";
+  grid-row-gap: 10px;
+  grid-column-gap: 15px;
 }
+#pg3 #card1 {
+  grid-area: c1;
+  background-color: darkred;
+}
+#pg3 #card2 {
+  grid-area: c2;
+  background-color: darkcyan;
+}
+#pg3 #card3 {
+  grid-area: c3;
+  background-color: darkgoldenrod;
+}
+#pg3 #card4 {
+  grid-area: c4;
+  background-color: darkgray;
+}
+#pg3 #card5 {
+  grid-area: c5;
+  background-color: darkgreen;
+}
+#pg3 #card6 {
+  grid-area: c6;
+  background-color: darkkhaki;
+}
+#pg3 #card7 {
+  grid-area: c7;
+  background-color: darkmagenta;
+}
+#pg3 #card8 {
+  grid-area: c8;
+  background-color: darkolivegreen;
+}/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,47 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  background-color: grey;
+}
+
+header {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60%;
+  background-color: aqua;
+}
+header ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+header ul li {
+  color: blue;
+}
+
+main {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-rows: 0.5fr;
+  grid-template-columns: 0.5fr 0.5fr 0.5fr;
+}
+main .box1 {
+  background-color: yellow;
+}
+main .box2 {
+  background-color: red;
+}
+main .box3 {
+  background-color: brown;
+}/*# sourceMappingURL=style.css.map */
