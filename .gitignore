@@ -1,0 +1,18 @@
+# Compiled CSS
+*.css
+*.css.map
+*.min.css
+
+# Node modules (if using npm)
+node_modules/
+
+# IDE files
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Environment variables
+.env
