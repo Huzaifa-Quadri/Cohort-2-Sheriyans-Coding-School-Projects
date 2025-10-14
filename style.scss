@@ -55,7 +55,7 @@ main {
   padding-right: 1.5rem;
   padding-top: 2.5rem;
   padding-bottom: 2.5rem;
-  border: 2px solid white;
+  // border: 2px solid white;
 
   height: 100%;
   width: 100%;
@@ -67,7 +67,24 @@ main {
 
   section {
     display: flex;
-    gap: 1rem;
+    gap: 2rem;
+    flex-direction: row;
+    overflow-x: auto;
+    overflow-y: hidden;
+    // white-space: nowrap;
+    scroll-behavior: smooth;
+    cursor: grab;
+    user-select: none;
+
+    scrollbar-width: none;
+    -ms-overflow-style: none; /* IE and Edge */
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+  }
+  section::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
   }
 
   #class-task {
@@ -184,11 +201,11 @@ footer {
   text-align: center;
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
-  border-top: 1px solid #374151;
+  // border-top: 1px solid #374151;
   font-size: 0.875rem;
   line-height: 1.25rem;
   color: #6b7280;
-  border: 1px solid salmon;
+  // border: 1px solid salmon;
   span {
     color: #22d3ee;
     font-weight: 500;
