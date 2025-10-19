@@ -3,127 +3,148 @@
   padding: 0%;
   box-sizing: border-box;
 }
-
+@mixin all100 {
+  height: 100%;
+  width: 100%;
+}
+@mixin allCentre {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 html,
 body {
   width: 100%;
-  height: 100%;
+  height: 100vh;
 }
+nav {
+  border: 1px solid black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 3rem;
 
-.Page {
-  border: 3px solid black;
+  a {
+    padding: 0px 1rem;
+    text-decoration: none;
+    color: black;
+  }
+  .nav-button {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    button {
+      padding: 1rem 2rem;
+      border: 1px solid blue;
+      border-radius: 2rem;
+    }
+    #su {
+      color: blue;
+      background-color: white;
+    }
+    #gs {
+      color: white;
+      background-color: blue;
+    }
+  }
 }
 
 #pg1 {
-  height: 100%;
-  width: 100%;
+  background-color: #f6f7f9;
+  @include all100;
   display: grid;
+  grid-template-columns: 0.25fr 0.75fr;
+  grid-template-rows: 0.3fr 0.7fr;
+  grid-template-areas:
+    "left right"
+    "cover cover";
+  padding: 0px 4rem;
+  gap: 20px;
 
-  grid-template-columns: 0.25fr 1fr;
-  grid-template-rows: 10vh 35vh 1fr;
+  .firm {
+    grid-area: left;
+    background-color: lightblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 
-  grid-template-areas: "nb nb" "s1 s2" "cp cp";
-
-  #navbar {
-    grid-area: nb;
+  .desc {
+    grid-area: right;
     background-color: pink;
-    /* ... */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
-  #sec1 {
-    grid-area: s1;
-    background-color: bisque;
-    /* ... */
-  }
+  .cover-photo {
+    grid-area: cover;
+    background-color: lightgreen;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    padding: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-  #sec2 {
-    grid-area: s2;
-    background-color: brown;
-  }
-
-  .coverpic {
-    grid-area: cp;
-    background-color: blue;
-    /* .... */
+    video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 2rem;
+      overflow: hidden;
+    }
   }
 }
 
 #pg2 {
-  height: 100%;
-  width: 100%;
-  display: grid;
-  grid-template-columns: 100%;
-  grid-template-rows: 40% 60%;
-  grid-template-areas: "st" "Ab";
+  @include all100;
+  display: flex;
+  flex-direction: column;
 
-  #stats {
-    grid-area: st;
-    background-color: gold;
-    /* ... */
+  .stats {
+    // height: 20%;
+    width: 100%;
+    padding: 4rem 2rem;
+    // grid-area: stat;
+    background-color: lightcoral;
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+    gap: 20rem;
+
+    .stat {
+      width: 12rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 0.5rem;
+      span {
+        font-size: 4rem;
+      }
+      text-align: center;
+    }
   }
 
-  #About {
-    grid-area: Ab;
-    background-color: purple;
-  }
-}
-
-#expretise {
-  height: 20vh;
-  width: 100%;
-}
-
-#pg3 {
-  height: 100%;
-  width: 100%;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  grid-template-areas:
-    "c1 c2 c3 c4"
-    "c5 c6 c7 c8";
-
-  grid-row-gap: 10px;
-  grid-column-gap: 15px;
-
-  #card1 {
-    grid-area: c1;
-    background-color: darkred;
-  }
-
-  #card2 {
-    grid-area: c2;
-    background-color: darkcyan;
-  }
-
-  #card3 {
-    grid-area: c3;
-    background-color: darkgoldenrod;
-  }
-
-  #card4 {
-    grid-area: c4;
-    background-color: darkgray;
-  }
-
-  #card5 {
-    grid-area: c5;
-    background-color: darkgreen;
-  }
-
-  #card6 {
-    grid-area: c6;
-    background-color: darkkhaki;
-  }
-
-  #card7 {
-    grid-area: c7;
-    background-color: darkmagenta;
-  }
-
-  #card8 {
-    grid-area: c8;
-    background-color: darkolivegreen;
+  .about-Us {
+    // grid-area: about;
+    background-color: lightsteelblue;
+    padding: 2rem 4rem;
+    display: flex;
+    justify-content: space-between;
+    .block {
+      border: 1px solid black;
+      width: 50%;
+      padding: 4rem;
+      h2 {
+        font-size: 3rem;
+      }
+    }
+    video {
+      width: 30vw;
+    }
   }
 }
-//!  INCOMPLETE TASK
