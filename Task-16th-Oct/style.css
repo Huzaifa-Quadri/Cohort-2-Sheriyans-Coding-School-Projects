@@ -19,149 +19,104 @@
 
 html,
 body {
+  height: 100vh;
   width: 100%;
-  height: 100%;
   background-color: #121212;
-  padding: 0px 1.5%;
-  overflow-x: hidden;
+  font-family: "Satoshi", sans-serif;
 }
 
-nav {
-  display: flex;
-  justify-content: space-between;
-  height: 8%;
-  align-items: center;
-  text-transform: uppercase;
-}
-nav h4 {
-  font-size: 1.5rem;
-  font-family: "Satoshi";
-  font-weight: 300;
-}
-nav ul {
-  display: flex;
-  list-style: none;
-  gap: 5px;
-}
-nav ul li button {
-  font-size: 1rem;
-  font-family: "Lord";
-  padding: 15px 20px;
-  border-radius: 10px;
-  background-color: #1e1e1e;
-  box-shadow: none;
-  border: none;
-}
-nav ul li:nth-child(7) button {
-  background-color: #cebd63;
-  color: black;
-}
-nav ul li button:hover {
-  cursor: pointer;
+section {
+  max-width: 2000px;
 }
 
 main {
   width: 100%;
-  max-width: 100%;
-  display: flex;
-  gap: 10px;
-}
-main .cover {
-  height: 100%;
-  border-radius: 20px;
-  overflow: hidden;
-}
-main .cover img {
-  height: 100%;
-  width: 100%;
-}
-main .blok {
-  background-color: #1e1e1e;
-  border-radius: 20px;
   display: flex;
   flex-direction: column;
-  padding: 3%;
+  gap: 0rem;
 }
-main .blok h1 {
-  font-size: 4rem;
-  font-weight: 300;
-  padding-top: 30rem;
+main section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem;
+}
+main section .cover {
+  width: 100%;
+}
+main section .cover img {
+  width: 100%;
+  border-radius: 0.5rem;
+}
+main section #logo {
   text-transform: uppercase;
-  font-family: "Chillax";
 }
-main .blok p {
-  color: #9c9b98;
-  font-size: 1.3rem;
-  font-family: "Satoshi";
-  line-height: 1.5;
-}
-main .blok #down-arrow {
-  padding-top: 2rem;
-  background-color: transparent;
-}
-main .blok #down-arrow i {
-  border-radius: 50%;
-  padding: 10px;
-  margin-right: 1rem;
-  background-color: green;
-}
-
-.page-2 .stats {
-  padding: 50px 5rem;
-  width: 100%;
-}
-.page-2 .stats ul {
-  display: flex;
-  justify-content: space-between;
-  list-style: none;
-}
-.page-2 .stats ul li {
+main section .bottom {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  gap: 3rem;
+  background-color: #212121;
+  border-radius: 0.5rem;
+  padding: 1rem 2rem;
+}
+main section .bottom .text h1 {
+  font-size: 2.2rem;
+  font-family: "Chillax", sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+main section .bottom .text p {
+  margin-top: 0.5rem;
+  font-size: 1.3rem;
+  line-height: 2rem;
+  font-weight: 500;
+  color: #9c9b98;
+  font-family: "Satoshi", sans-serif;
+}
+main section .bottom .text button {
+  display: flex;
+  background-color: transparent;
+  border: none;
+  text-decoration: none;
+  padding: 1rem 0rem;
   align-items: center;
 }
-.page-2 .stats ul li p:nth-child(2) {
-  font-size: 4rem;
-}
-.page-2 .stats ul p {
-  text-transform: uppercase;
+main section .bottom .text button i {
+  font-size: 1.3rem;
+  font-weight: thinner;
+  margin-right: 0.5rem;
+  border-radius: 50%;
+  padding: 0.5rem;
+  background-color: #292929;
+  border: 1px solid grey;
 }
 
-@media screen and (max-width: 550px) {
-  html,
-  body {
-    padding: 0;
-    margin: 0;
-    width: 100%;
+@media screen and (min-width: 600px) {
+  main {
+    align-items: center;
   }
-  nav {
-    justify-content: center;
-  }
-  nav ul {
-    display: none;
-  }
-  nav ul .row1,
-  nav ul .row2 {
+  section.view1 {
     display: flex;
     flex-direction: row;
-    gap: 20px;
+    gap: 1rem;
+    padding: 0px 3.5rem;
   }
-  main {
-    width: 100%;
-    max-width: 100vw;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    margin: 0;
-    padding: 0;
+  section.view1 .cover,
+  section.view1 .bottom {
+    width: 50%;
   }
-  main .cover {
-    width: 100%;
-    border-radius: 0;
+  section.view1 .bottom {
+    justify-content: space-between;
+    padding: 3rem;
   }
-  main .blok {
-    width: 100%;
-    border-radius: 0;
+  section.view1 .bottom .text h1 {
+    font-size: 4rem;
+  }
+  section.view1 .bottom .text p {
+    width: 65%;
+    font-size: 1.4rem;
+    text-transform: justify;
+    margin-bottom: 2rem;
   }
 }/*# sourceMappingURL=style.css.map */

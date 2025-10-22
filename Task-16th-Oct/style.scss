@@ -12,13 +12,24 @@
 }
 
 @mixin all100 {
-  height: 100%;
+  height: 100vh;
   width: 100%;
 }
 @mixin allCentre {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+@mixin flexColumn($gap: 0) {
+  display: flex;
+  flex-direction: column;
+  gap: $gap;
+}
+@mixin flexRow($gap: 0) {
+  display: flex;
+  flex-direction: row;
+  gap: $gap;
 }
 * {
   margin: 0;
@@ -28,177 +39,267 @@
 }
 html,
 body {
-  width: 100%;
-  height: 100%;
+  @include all100;
   background-color: #121212;
-  padding: 0px 1.5%;
-  overflow-x: hidden;
+  font-family: "Satoshi", sans-serif;
 }
-
-nav {
-  display: flex;
-  justify-content: space-between;
-  height: 8%;
-  align-items: center;
-  text-transform: uppercase;
-
-  h4 {
-    font-size: 1.5rem;
-    font-family: "Satoshi";
-    font-weight: 300;
-  }
-
-  ul {
-    display: flex;
-    list-style: none;
-    gap: 5px;
-
-    li button {
-      font-size: 1rem;
-      font-family: "Lord";
-      padding: 15px 20px;
-      border-radius: 10px;
-      background-color: #1e1e1e;
-      box-shadow: none;
-      border: none;
-    }
-
-    li:nth-child(7) button {
-      background-color: #cebd63;
-      color: black;
-    }
-
-    li button:hover {
-      cursor: pointer;
-    }
-  }
+section {
+  max-width: 2000px; //! It will not go more than 2000px; will work on 4k screens also
 }
-
 main {
   width: 100%;
-  max-width: 100%;
-  display: flex;
-  gap: 10px;
+  @include flexColumn(0rem);
 
-  .cover {
-    height: 100%;
-    border-radius: 20px;
-    overflow: hidden;
-
-    img {
-      height: 100%;
-      width: 100%;
-    }
-  }
-
-  .blok {
-    background-color: #1e1e1e;
-    border-radius: 20px;
-    display: flex;
-    flex-direction: column;
-    padding: 3%;
-
-    h1 {
-      font-size: 4rem;
-      font-weight: 300;
-      padding-top: 30rem;
-      text-transform: uppercase;
-      font-family: "Chillax";
-    }
-
-    p {
-      color: #9c9b98;
-      font-size: 1.3rem;
-      font-family: "Satoshi";
-      line-height: 1.5;
-    }
-
-    #down-arrow {
-      padding-top: 2rem;
-      background-color: transparent;
-
-      i {
-        border-radius: 50%;
-        padding: 10px;
-        margin-right: 1rem;
-        background-color: green;
-      }
-    }
-  }
-}
-
-// 1st Page Mobile View
-
-//************* Page 2
-.page-2 {
-  .stats {
-    padding: 50px 5rem;
+  section {
     width: 100%;
-    ul {
-      display: flex;
-      // background-color: burlywood;
-      justify-content: space-between;
-      list-style: none;
-      li {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-      }
-      li p:nth-child(2) {
-        font-size: 4rem;
-      }
-      p {
-        text-transform: uppercase;
-      }
-    }
-  }
-}
-
-@media screen and (max-width: 550px) {
-  html,
-  body {
-    padding: 0;
-    margin: 0;
-    width: 100%;
-    // overflow-x: hidden;
-  }
-
-  nav {
-    ul {
-      display: none;
-      .row1,
-      .row2 {
-        display: flex;
-        flex-direction: row;
-        gap: 20px;
-      }
-    }
-    justify-content: center;
-  }
-
-  main {
-    width: 100%;
-    max-width: 100vw;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    margin: 0;
-    padding: 0;
-
+    @include flexColumn(0.5rem);
+    padding: 1rem;
     .cover {
       width: 100%;
-      border-radius: 0;
+      img {
+        width: 100%;
+        border-radius: 0.5rem;
+      }
     }
-
-    .blok {
-      width: 100%;
-      border-radius: 0;
+    #logo {
+      text-transform: uppercase;
     }
-  }
+    .bottom {
+      @include flexColumn(3rem);
+      background-color: #212121;
+      border-radius: 0.5rem;
+      padding: 1rem 2rem;
+      .text {
+        h1 {
+          font-size: 2.2rem;
+          font-family: "Chillax", sans-serif;
+          font-weight: 400;
+          text-transform: uppercase;
+        }
+        p {
+          margin-top: 0.5rem;
+          font-size: 1.3rem;
+          line-height: 2rem;
+          font-weight: 500;
+          color: #9c9b98;
+          font-family: "Satoshi", sans-serif;
+        }
 
-  .page-2 {
-    .stats {
+        button {
+          display: flex;
+          background-color: transparent;
+          border: none;
+          text-decoration: none;
+          padding: 1rem 0rem;
+          align-items: center;
+          i {
+            font-size: 1.3rem;
+            font-weight: thinner;
+            margin-right: 0.5rem;
+            border-radius: 50%;
+            padding: 0.5rem;
+            background-color: #292929;
+            border: 1px solid grey;
+          }
+        }
+      }
     }
   }
 }
+//desktop view of first page as of now
+@media screen and (min-width: 600px) {
+  //set this scss if device width goes more than 600px
+  main {
+    align-items: center;
+  }
+  section.view1 {
+    @include flexRow(1rem);
+    padding: 0px 3.5rem;
+    .cover,
+    .bottom {
+      width: 50%;
+    }
+
+    .bottom {
+      // border: 1px solid orange;
+      justify-content: space-between;
+      padding: 3rem;
+
+      .text {
+        h1 {
+          font-size: 4rem;
+        }
+        p {
+          width: 65%;
+          font-size: 1.4rem;
+          text-transform: justify;
+          margin-bottom: 2rem;
+        }
+      }
+    }
+  }
+}
+
+// nav {
+//   display: flex;
+//   justify-content: space-between;
+//   height: 8%;
+//   align-items: center;
+//   text-transform: uppercase;
+
+//   h4 {
+//     font-size: 1.5rem;
+//     font-family: "Satoshi";
+//     font-weight: 300;
+//   }
+
+//   ul {
+//     display: flex;
+//     list-style: none;
+//     gap: 5px;
+
+//     li button {
+//       font-size: 1rem;
+//       font-family: "Lord";
+//       padding: 15px 20px;
+//       border-radius: 10px;
+//       background-color: #1e1e1e;
+//       box-shadow: none;
+//       border: none;
+//     }
+
+//     li:nth-child(7) button {
+//       background-color: #cebd63;
+//       color: black;
+//     }
+
+//     li button:hover {
+//       cursor: pointer;
+//     }
+//   }
+// }
+
+// main {
+//   width: 100%;
+//   max-width: 100%;
+//   display: flex;
+//   gap: 10px;
+
+//   .cover {
+//     height: 100%;
+//     border-radius: 20px;
+//     overflow: hidden;
+
+//     img {
+//       height: 100%;
+//       width: 100%;
+//     }
+//   }
+
+//   .blok {
+//     background-color: #1e1e1e;
+//     border-radius: 20px;
+//     display: flex;
+//     flex-direction: column;
+//     padding: 3%;
+
+//     h1 {
+//       font-size: 4rem;
+//       font-weight: 300;
+//       padding-top: 30rem;
+//       text-transform: uppercase;
+//       font-family: "Chillax";
+//     }
+
+//     p {
+//       color: #9c9b98;
+//       font-size: 1.3rem;
+//       font-family: "Satoshi";
+//       line-height: 1.5;
+//     }
+
+//     #down-arrow {
+//       padding-top: 2rem;
+//       background-color: transparent;
+
+//       i {
+//         border-radius: 50%;
+//         padding: 10px;
+//         margin-right: 1rem;
+//         background-color: green;
+//       }
+//     }
+//   }
+// }
+
+// // 1st Page Mobile View
+
+// //************* Page 2
+// .page-2 {
+//   .stats {
+//     padding: 50px 5rem;
+//     width: 100%;
+//     ul {
+//       display: flex;
+//       // background-color: burlywood;
+//       justify-content: space-between;
+//       list-style: none;
+//       li {
+//         display: flex;
+//         flex-direction: column;
+//         justify-content: center;
+//         align-items: center;
+//       }
+//       li p:nth-child(2) {
+//         font-size: 4rem;
+//       }
+//       p {
+//         text-transform: uppercase;
+//       }
+//     }
+//   }
+// }
+
+// @media screen and (max-width: 550px) {
+//   html,
+//   body {
+//     padding: 0;
+//     margin: 0;
+//     width: 100%;
+//     // overflow-x: hidden;
+//   }
+
+//   nav {
+//     ul {
+//       display: none;
+//       .row1,
+//       .row2 {
+//         display: flex;
+//         flex-direction: row;
+//         gap: 20px;
+//       }
+//     }
+//     justify-content: center;
+//   }
+
+//   main {
+//     width: 100%;
+//     max-width: 100vw;
+//     display: flex;
+//     flex-direction: column;
+//     gap: 5px;
+//     margin: 0;
+//     padding: 0;
+
+//     .cover {
+//       width: 100%;
+//       border-radius: 0;
+//     }
+
+//     .blok {
+//       width: 100%;
+//       border-radius: 0;
+//     }
+//   }
+
+// }
