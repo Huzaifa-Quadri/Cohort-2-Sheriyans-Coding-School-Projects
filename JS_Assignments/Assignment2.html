@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Assignment-2</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Assignment-2</h1>
+
+      <!-- Question 1 -->
+      <div class="question">
+        Q1.Basic Operators (Arithmetic, Assignment, Increment, Decrement,
+        Comparison, Logical, Bitwise) <br />a. Create two numbers a = 10 and b =
+        3. Perform and log: a + b, a - b, a * b, a / b, a % b. <br />b. Write:
+        let x = 5; x = x + 3; Now rewrite the same using +=. Do the same for -=,
+        *=, /=. <br />c. let count = 5; Use count++ and log value before and
+        after. Repeat for count–. <br />d. Compare two values: 5 == “5” and 5
+        === “5”. Observe difference. <br />e. Check if 10 is greater than 5,
+        less than 20, and equal to 10. <br />f. Try logical AND and OR: true &&
+        false true || false !(true) <br />g. Predict the result of: (5 > 3 && 10
+        > 8), (5 > 3 || 10 < 8) <br />h. Bitwise (light intro): Evaluate 5 & 1
+        and 5 | 1. Write result and your observation (no deep explanation needed
+        now).
+      </div>
+
+      <div class="label">Answer:</div>
+      <pre class="code-box">
+    
+
+        1.(a)
+        let a = 10; let b = 3;
+        console.log("a + b =", a + b); // 13
+        console.log("a - b =", a - b); // 7
+        console.log("a * b =", a * b); // 30
+        console.log("a / b =", a / b); // 3.3333
+        console.log("a % b =", a % b); // 1
+
+        (b)
+        let x = 5;
+        x += 3; // x = x + 3
+        console.log("x after += 3:", x); // 8
+        x -= 3; // x = x - 3
+        console.log("x after -= 3:", x); // 5
+        x *= 2; // x = x * 2
+        console.log("x after *= 2:", x); // 10
+        x /= 2; // x = x / 2
+        console.log("x after /= 2:", x); // 5
+
+        (c)
+        let count = 5;
+        console.log("Initial count:", count); // 5
+        count++;
+        console.log("After count++:", count); // 6 
+
+        count--;
+        console.log("After count--:", count); // 5
+
+        (d)
+        console.log(5 === '5'); // false
+        console.log(5 == '5'); // true
+
+        (e)
+        console.log(10 > 5); // true
+        console.log(10 < 20); //true
+        console.log(10 == 10); // true
+
+        (f)
+        cosole.log(true && false); // false
+        console.log(true || false); // true
+        console.log(!true); // false
+
+        (g)
+        console.log(5 > 3 && 10 > 8); // true
+        cosole.log(5 > 3 || 10 < 8); // true
+
+        (h)
+        console.log(5 & 1); // 1
+        console.log(5 | 1); // 5
+      </pre>
+      <hr />
+
+      <div class="question">
+        Q2. Variable Hoisting in JavaScript <br />a. Predict output of:
+        console.log(a); var a = 10 <br />b. Predict output of: console.log(b);
+        let b = 10 <br />c. Predict output of: test() function test() {
+        console.log(“Hello”) } <br />d. Try writing a function expression before
+        initialization and call it: hello() var hello = function() {
+        console.log(“Hi”) } Write what happened and why. <br />e. Write one
+        sentence: What gets hoisted? What does not get hoisted fully?
+      </div>
+
+      <div class="label">Explnation:</div>
+      <div class="answer">
+        1.(d) Function will be called normally as javascript hoists entire
+        function definition at top of scope during compilation phase. This works
+        because the JavaScript engine stores the complete function in memory
+        before executing any code.
+        <br />This is not true for function expressions.
+
+        <br />
+        <br />
+        1.(e). Function declarations are hoisted fully along with their full
+        definitions and only the declaration of var variable gets hoisted at top
+        of scope. <br />
+        Function expression and let/const variables are not hoisted.
+      </div>
+
+      <div class="label">Answer:</div>
+      <pre class="code-box">
+    
+
+        1.(a)
+        console.log(a)  //undefined
+        var a;
+
+        (b)
+        console.log(b) //Cannot Access Error because of Temporal Dead Zone
+        let b = 5;
+        
+        (c)
+        function test(){
+            console.log(“Testing Hello”) 
+        }
+        test(); //function called. Output --> Testing Hello
+
+        (d)
+        hello();  //function called. Output --> Calling function hello
+        function hello() {
+            console.log("Calling function hello");
+        }
+      </pre>
+      <hr />
+
+      <!-- Duplicate this structure for more questions -->
+      <div class="question">
+        Q3. Conditional Operators (if, else, else-if, ternary, switch)
+        <br />a. Take input using prompt for age. If age > 18 → log “Adult”.
+        Else → log “Minor”. <br />b. Write a program: If marks >= 90 → “A grade”
+        Else if marks >= 75 → “B grade” Else if marks >= 50 → “C grade” Else →
+        “Fail” <br />c. Create a variable city = “Bhopal”. If city is “Bhopal” →
+        log “MP” Else if city is “Delhi” → log “Capital” Else → log “Unknown
+        City” <br />d. Use ternary operator: Let score = 40. If score > 35 →
+        “Pass” else “Fail” using a ternary. <br />e. Convert this if-else into a
+        ternary: if (temperature > 30) { “Hot” } else { “Pleasant” }<br />f.
+        Write a switch case: Take day number (1 to 7). Print the day name.
+        Default case: “Invalid Day”. <br />g. Using logical operators in
+        condition: If age > 18 and country == “India” → log “Eligible for Vote”
+        Else → “Not Eligible”
+      </div>
+
+      <div class="label">Answer:</div>
+      <pre class="code-box">
+    
+
+        3.(a)
+        let age = 22;
+        if (age > 18) {
+          console.log("Adult");
+        } else {
+          console.log("Minor");
+        }
+
+        (b)
+        let marks = 33;
+        if (marks >= 90) {
+          console.log("A");
+        } else if (marks >= 75) {
+          console.log("B");
+        } else if (marks >= 50) {
+        } else {
+          console.log("Failed");
+        }
+        
+        (c)
+        let city = "Indore";
+        if (city === "Bhopal") {
+          console.log("MP");
+        } else if (city === "Delhi") {
+          console.log("Capital");
+        } else {
+          console.log("Unknown City");
+        }
+
+        (d)
+        let score = 40;
+        console.log(score > 35 ? "Pass" : "Fail");
+
+        (e)
+        let temp = 20;
+        console.log(temp > 35 ? "Hot" : "Pleasant");
+
+        (f)
+        let num = 3;
+        switch (num) {
+          case 1:
+            console.log("Monday");
+            break;
+          case 2:
+            console.log("Tuesday");
+            break;
+          case 3:
+            console.log("Wednesday");
+            break;
+          case 1:
+            console.log("Thrusday");
+            break;
+          case 1:
+            console.log("Friday");
+            break;
+          case 1:
+            console.log("Satday");
+            break;
+          case 1:
+            console.log("Sunday");
+            break;
+          default:
+            console.log("Invalid Day");
+        }
+
+        (g)
+        let country = "India";
+        if (age > 18 && country === "India") {
+          console.log("Eligible for Vote");
+        } else {
+          console.log("Not Eligible");
+        }
+
+      </pre>
+      <hr />
+    </div>
+    <script>
+      console.log(a);
+      var a; //undefined
+
+      function test() {
+        console.log("Hello");
+      }
+      test();
+
+      console.log("Function before initialization - ");
+      hello();
+      function hello() {
+        console.log("Calling function hello");
+      }
+
+      console.log("Hoisted partially: ");
+      var b = 12;
+      console.log(b);
+
+      console.log("Hoisted fully: ");
+      var b = 12;
+      function hey() {
+        console.log("hello from function");
+      }
+
+      console.log("Question 3 ");
+      let age = 22;
+      if (age > 18) {
+        console.log("Adult");
+      } else {
+        console.log("Minor");
+      }
+
+      let marks = 33;
+      if (marks >= 90) {
+        console.log("A");
+      } else if (marks >= 75) {
+        console.log("B");
+      } else if (marks >= 50) {
+      } else {
+        console.log("Failed");
+      }
+
+      let city = "Indore";
+      if (city === "Bhopal") {
+        console.log("MP");
+      } else if (city === "Delhi") {
+        console.log("Capital");
+      } else {
+        console.log("Unknown City");
+      }
+      let temp = 22;
+      if (temp > 30) {
+        ("Hot");
+      } else {
+        ("Pleasant");
+      }
+
+      let num = 3;
+      switch (num) {
+        case 1:
+          console.log("Monday");
+          break;
+        case 2:
+          console.log("Tuesday");
+          break;
+        case 3:
+          console.log("Wednesday");
+          break;
+        case 1:
+          console.log("Thrusday");
+          break;
+        case 1:
+          console.log("Friday");
+          break;
+        case 1:
+          console.log("Satday");
+          break;
+        case 1:
+          console.log("Sunday");
+          break;
+        default:
+          console.log("Invalid Day");
+      }
+
+      let country = "India";
+      if (age > 18 && country === "India") {
+        console.log("Eligible for Vote");
+      } else {
+        console.log("Not Eligible");
+      }
+    </script>
+  </body>
+</html>
