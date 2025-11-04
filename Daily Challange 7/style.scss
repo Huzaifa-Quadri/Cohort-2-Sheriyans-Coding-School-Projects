@@ -1,0 +1,479 @@
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+  font-family: "Inter", sans-serif;
+  color: #1a1a1a;
+  background-color: #fff;
+}
+@mixin all100 {
+  height: 100%;
+  width: 100%;
+}
+// <element>.nth-child(<n>){  properties  }
+@mixin allCentre {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin border($color: black) {
+  border: 1px solid $color;
+}
+
+main {
+  width: 100%;
+  section.view1 {
+    @include border(darkorange);
+    // height: 80%;
+    padding: 6rem 0;
+    // background: linear-gradient(to top right, pink, white);
+    background: linear-gradient(135deg, #ffeef7, #ffffff);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5rem;
+
+    .top {
+      // @include border(blue);
+      width: 90%;
+      display: flex;
+      justify-content: center;
+      justify-content: center;
+      // gap: 3rem;
+      flex-wrap: wrap;
+      .heading {
+        // background-color: greenyellow;
+        // width: 50%;
+        // @include allCentre;
+        flex-grow: 1;
+        flex-shrink: 1;
+        flex-basis: 45%;
+        display: flex;
+        flex-direction: column;
+        // text-align: center;
+        justify-content: center;
+        h1 {
+          margin-left: auto;
+          // font-size: 4.5rem;
+          font-size: clamp(2rem, 4vw, 4.5rem);
+          font-weight: 700;
+          width: 60%;
+          text-align: left;
+          color: #202124;
+        }
+      }
+      .cover {
+        flex: 1 1 45%;
+        display: flex;
+        justify-content: center;
+        // background-color: orange;
+        img {
+          width: 100%;
+          max-width: 550px;
+          height: auto;
+          object-fit: contain;
+        }
+      }
+    }
+
+    .bottom {
+      width: 90%;
+      max-width: 900px;
+      text-align: center;
+      p {
+        font-size: clamp(1.2rem, 2vw, 2rem);
+        // width: 60%;
+        color: #444;
+        line-height: 1.5;
+      }
+    }
+  }
+
+  section.view3 {
+    padding: 3rem 0;
+    // background-color: pink;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+
+    .card {
+      width: 18rem;
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+      overflow: hidden;
+      border-top: 3px solid #e8eaed;
+      padding-top: 1.5rem;
+      padding-right: 2rem;
+
+      h2 {
+        font-size: 1.5rem;
+        // margin-top: 1.5rem;
+        color: black;
+        padding-bottom: 1.5rem;
+      }
+
+      p {
+        color: black;
+        line-height: 1.5;
+        font-size: 1rem;
+        padding-bottom: 2.5rem;
+      }
+
+      img {
+        width: 100%;
+        object-fit: contain;
+      }
+    }
+  }
+  section.view4 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: auto;
+
+    .heading {
+      flex: 1;
+      max-width: 520px;
+
+      h4 {
+        font-size: 1.2rem;
+        color: #4a4a4a;
+        margin-bottom: 1rem;
+        font-weight: 500;
+      }
+
+      h3 {
+        font-size: clamp(2rem, 4vw, 3.8rem); // closer to Flutter site
+        font-weight: 700;
+        color: #202124;
+        margin-bottom: 1.5rem;
+        line-height: 1.2;
+        width: 75%;
+      }
+
+      p {
+        font-size: clamp(1rem, 1.4vw, 1.25rem);
+        color: #444;
+        line-height: 1.3;
+        margin-bottom: 2.2rem;
+        width: 75%;
+      }
+
+      .join {
+        display: flex;
+        gap: 1rem;
+
+        button {
+          font-size: 0.9rem;
+          font-weight: 600;
+          color: black;
+          background: transparent;
+          border: none;
+          cursor: pointer;
+        }
+
+        #b1 {
+          padding: 0.7rem 1.7rem;
+          font-size: 0.9rem;
+          font-weight: 600;
+          background: white;
+          color: #1a73e8;
+          border: 1px solid #1a73e8;
+          border-radius: 2rem;
+          cursor: pointer;
+        }
+      }
+    }
+
+    .cover {
+      flex: 1;
+      display: flex;
+      justify-content: flex-end;
+
+      img {
+        width: 90%;
+        max-width: 500px;
+      }
+    }
+  }
+
+  section.view5 {
+    width: 100%;
+    background: linear-gradient(to top right, #fcfce2, #f5fbfe);
+
+    .content {
+      max-width: 1200px;
+      margin: auto;
+      padding: 4rem 2rem;
+
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: center;
+      gap: clamp(2rem, 4vw, 6rem);
+    }
+
+    .heading {
+      flex: 1;
+      max-width: 520px;
+      // margin-left: 7rem;
+
+      h4 {
+        font-size: 1.2rem;
+        color: #4a4a4a;
+        margin-bottom: 1rem;
+        font-weight: 500;
+      }
+
+      h3 {
+        font-size: clamp(2rem, 4vw, 3.8rem); // closer to Flutter site
+        font-weight: 700;
+        color: #202124;
+        margin-bottom: 1.5rem;
+        line-height: 1.2;
+        width: 75%;
+      }
+
+      p {
+        font-size: clamp(1rem, 1.4vw, 1.25rem);
+        color: #444;
+        line-height: 1.3;
+        margin-bottom: 2.2rem;
+        width: 75%;
+      }
+
+      .join {
+        display: flex;
+        gap: 1rem;
+
+        button {
+          padding: 0.7rem 1.7rem;
+          width: fit-content;
+          font-size: 0.9rem;
+          font-weight: 600;
+          background: #1a73e8;
+          color: white;
+          border: 1px solid #1a73e8;
+          border-radius: 2rem;
+          cursor: pointer;
+        }
+      }
+    }
+
+    .cover {
+      flex: 1;
+      display: flex;
+      justify-content: flex-end;
+
+      img {
+        width: 90%;
+        max-width: 500px;
+      }
+    }
+  }
+
+  section.view6 {
+    width: 100%;
+    // background-color: lightblue;
+    display: grid;
+    place-items: center;
+    .container {
+      // background-color: red;
+      // have to give width here
+      width: 60%;
+      display: flex;
+
+      .content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        h4 {
+          font-size: 1.2rem;
+          color: #4a4a4a;
+          margin-bottom: 1rem;
+          font-weight: 500;
+        }
+
+        h3 {
+          font-size: clamp(2rem, 4vw, 3.8rem); // closer to Flutter site
+          font-weight: 700;
+          color: #202124;
+          margin-bottom: 1.5rem;
+          line-height: 1.2;
+          width: 75%;
+        }
+
+        p {
+          font-size: clamp(1rem, 1.4vw, 1.25rem);
+          color: #444;
+          line-height: 1.3;
+          margin-bottom: 2.2rem;
+          width: 75%;
+        }
+
+        button {
+          padding: 0.7rem 1.7rem;
+          width: fit-content;
+          font-size: 0.9rem;
+          font-weight: 600;
+          background: white;
+          color: #1a73e8;
+          border: 1px solid #1a73e8;
+          border-radius: 2rem;
+          cursor: pointer;
+        }
+      }
+
+      .cover {
+        width: 50%;
+
+        img {
+          width: 100%;
+          object-fit: cover;
+          // background-color: green;
+        }
+      }
+    }
+  }
+
+  section.view7 {
+    width: 100%;
+    background: linear-gradient(135deg, #fcfce2, #f5fbfe);
+    display: grid;
+    place-items: center;
+    .container {
+      // background-color: red;
+      // have to give width here
+      width: 70%;
+      display: flex;
+      flex-direction: row-reverse;
+      // gap: 5rem;
+      .content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 50%;
+        // padding-left: 5rem;
+        h4 {
+          font-size: 1.2rem;
+          color: #4a4a4a;
+          margin-bottom: 1rem;
+          font-weight: 500;
+        }
+
+        h3 {
+          font-size: clamp(2rem, 4vw, 3.8rem); // closer to Flutter site
+          font-weight: 700;
+          color: #202124;
+          margin-bottom: 1.5rem;
+          line-height: 1.2;
+          width: 75%;
+        }
+
+        p {
+          font-size: clamp(1rem, 1.4vw, 1.25rem);
+          color: #444;
+          line-height: 1.3;
+          margin-bottom: 2.2rem;
+          width: 75%;
+        }
+
+        button {
+          padding: 0.7rem 1.7rem;
+          width: fit-content;
+          font-size: 0.9rem;
+          font-weight: 600;
+          background: #1a73e8;
+          color: white;
+          border: 1px solid #1a73e8;
+          border-radius: 2rem;
+          cursor: pointer;
+        }
+      }
+
+      .cover {
+        width: 50%;
+
+        img {
+          width: 100%;
+          object-fit: cover;
+          // background-color: green;
+        }
+      }
+    }
+  }
+
+  section.view8 {
+    display: grid;
+    place-items: center;
+    // background-color: green;
+    .bluecard {
+      background-color: #042449;
+      display: flex;
+      .left {
+        width: fit-content;
+
+        h2 {
+          color: red;
+        }
+      }
+
+      .right {
+        background-image: url(https://storage.googleapis.com/cms-storage-bucket/get-started-background.72521e62275b24d3c37d.png);
+      }
+    }
+  }
+}
+
+footer {
+  background-color: #f8f9fa;
+  padding: 5rem 3rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  .up {
+    display: flex;
+    justify-content: space-between;
+    .links {
+      width: 70%;
+      display: flex;
+      justify-content: space-around;
+      ul {
+        list-style: none;
+        line-height: 2rem;
+        li {
+          color: #4a4a4a;
+        }
+        li:nth-child(1) {
+          font-weight: bold;
+          color: black;
+        }
+      }
+    }
+  }
+  .bottom {
+    display: flex;
+    justify-content: space-between;
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      margin-left: 1rem;
+    }
+  }
+}
+
+.blank {
+  height: 200vh;
+  background-color: #f0f0f0;
+}

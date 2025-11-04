@@ -12,7 +12,7 @@
 }
 
 @mixin all100 {
-  height: 100vh;
+  height: 100%;
   width: 100%;
 }
 @mixin allCentre {
@@ -31,6 +31,49 @@
   flex-direction: row;
   gap: $gap;
 }
+
+@mixin border($color: white) {
+  border: 1px solid $color;
+}
+
+@mixin card-container($p-font-size: 1.3rem, $line-height: 2rem) {
+  width: 100%;
+  @include flexColumn(0.5rem);
+  padding: 1rem;
+  .top {
+    width: 100%;
+    img {
+      width: 100%;
+      border-radius: 0.5rem;
+    }
+  }
+  #logo {
+    text-transform: uppercase;
+  }
+
+  .bottom {
+    @include flexColumn(3rem);
+    background-color: #212121;
+    border-radius: 0.5rem;
+    padding: 1rem 2rem;
+    .text {
+      h1 {
+        font-size: 2.2rem;
+        font-family: "Chillax", sans-serif;
+        font-weight: 400;
+        text-transform: uppercase;
+      }
+      p {
+        margin-top: 0.5rem;
+        font-size: $p-font-size;
+        line-height: $line-height;
+        font-weight: 500;
+        color: #9c9b98;
+        font-family: "Satoshi", sans-serif;
+      }
+    }
+  }
+}
 * {
   margin: 0;
   padding: 0;
@@ -43,65 +86,302 @@ body {
   background-color: #121212;
   font-family: "Satoshi", sans-serif;
 }
-section {
-  max-width: 2000px; //! It will not go more than 2000px; will work on 4k screens also
-}
 main {
+  section {
+    max-width: 2000px; //! It will not go more than 2000px; will work on 4k screens also
+  }
   width: 100%;
   @include flexColumn(0rem);
 
-  section {
+  section.view1 {
+    @include card-container();
+    // width: 100%;
+    // @include flexColumn(0.5rem);
+    // padding: 1rem;
+    // .cover {
+    //   width: 100%;
+    //   img {
+    //     width: 100%;
+    //     border-radius: 0.5rem;
+    //   }
+    // }
+    // #logo {
+    //   text-transform: uppercase;
+    // }
+    // .bottom {
+    //   @include flexColumn(3rem);
+    //   background-color: #212121;
+    //   border-radius: 0.5rem;
+    //   padding: 1rem 2rem;
+    //   .text {
+    //     h1 {
+    //       font-size: 2.2rem;
+    //       font-family: "Chillax", sans-serif;
+    //       font-weight: 400;
+    //       text-transform: uppercase;
+    //     }
+    //     p {
+    //       margin-top: 0.5rem;
+    //       font-size: 1.3rem;
+    //       line-height: 2rem;
+    //       font-weight: 500;
+    //       color: #9c9b98;
+    //       font-family: "Satoshi", sans-serif;
+    //     }
+
+    button {
+      display: flex;
+      background-color: transparent;
+      border: none;
+      text-decoration: none;
+      padding: 1rem 0rem;
+      align-items: center;
+      i {
+        font-size: 1.3rem;
+        font-weight: thinner;
+        margin-right: 0.5rem;
+        border-radius: 50%;
+        padding: 0.5rem;
+        background-color: #292929;
+        border: 1px solid grey;
+      }
+    }
+    //   }
+    // }
+  }
+
+  section.page-2 {
+    @include flexColumn(2rem);
+    border: 1px solid yellow;
+    .stats {
+      @include flexColumn(0rem);
+      gap: 2rem;
+      .row1,
+      .row2 {
+        @include flexRow(1rem);
+        justify-content: center;
+
+        .element {
+          // @include border(red);
+          @include flexColumn(0.2rem);
+          text-transform: uppercase;
+          align-items: center;
+          gap: 0.5rem;
+          p:nth-child(1) {
+            // color: #9c9b98;
+            opacity: 0.7; //can also adjust opacity instead of color
+          }
+
+          p:nth-child(2) {
+            font-size: 2rem;
+            font-weight: 600;
+            color: white;
+          }
+        }
+      }
+      .row1 {
+        gap: 5rem;
+      }
+      .row2 {
+        gap: 3rem;
+      }
+    }
+  }
+
+  section.view3 {
+    //!!!!!!!!!!!!!!!! COPY pAsting top & bottom here !!!!!!!!!!!!!!!!
+    @include card-container(1rem, 1.5rem);
+
+    .bottom {
+      #desc {
+        p {
+          text-align: left;
+          margin-bottom: 2rem;
+
+          // Start as a single column
+          column-count: 1;
+          column-gap: 3rem;
+        }
+      }
+    }
+    //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! Finished COPY pAsting bottom here !!!!!!!!!!!!!!!!
+  }
+
+  section.view4 {
+    //!!!!!!!!!!!!!!!! COPY pAsting top & bottom here !!!!!!!!!!!!!!!!
+    @include card-container(1rem, 1.5rem);
+    //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! Finished COPY pAsting bottom here !!!!!!!!!!!!!!!!
+    .bottom {
+      #desc {
+        p {
+          // text-align: left;
+          text-align: justify;
+          margin-bottom: 2rem;
+
+          // Start as a single column
+          column-count: 1;
+          column-gap: 3rem;
+        }
+      }
+    }
+  }
+
+  section.view5 {
+    h1 {
+      font-size: 2rem;
+      text-transform: uppercase;
+      margin: 1.5rem 0rem;
+      margin-left: 2rem;
+    }
+
+    #find-job {
+      display: none;
+    }
+    .cards {
+      width: 100%;
+      padding: 1rem;
+      @include flexColumn(1rem);
+      .card {
+        width: 100%;
+        height: 22rem;
+        // border: 1px solid pink;
+        text-transform: uppercase;
+        border-radius: 1rem;
+        @include flexColumn(0rem);
+        justify-content: space-between;
+        align-items: flex-end;
+        padding: 1rem 1.5rem;
+        .socials {
+          font-size: 1rem;
+          padding: 2.5rem;
+
+          i {
+            border-radius: 50%;
+            padding: 0.7rem;
+            margin-left: 0.5rem;
+            // background-color: #2b2622; //temporary
+            backdrop-filter: blur(5px);
+            border: 1px solid grey;
+          }
+        }
+        .detail {
+          width: 100%;
+          border: 1px solid #323837;
+          border-radius: 20px;
+          backdrop-filter: blur(50px);
+          @include flexRow(1rem);
+          justify-content: space-between;
+          align-items: center;
+          padding: 1rem;
+          border-radius: 0.2rem;
+          h4 {
+            font-size: 1.3rem;
+          }
+        }
+      }
+
+      #c1 {
+        background-image: url(https://assets-global.website-files.com/63cffb7c16ab3347fc9734c8/63d2ccbd7d003dfb6a1bdecb_team-01-p-1080.webp);
+        background-size: cover;
+      }
+      #c2 {
+        background-image: url(https://assets-global.website-files.com/63cffb7c16ab3347fc9734c8/63d2ccbd2e12fa747e999689_team-02.webp);
+        background-size: cover;
+      }
+      #c3 {
+        background-image: url(https://assets-global.website-files.com/63cffb7c16ab3347fc9734c8/63d2ccbdc1f945f817bf4fd7_team-03.webp);
+        background-size: cover;
+      }
+    }
+  }
+
+  section.view6 {
     width: 100%;
-    @include flexColumn(0.5rem);
     padding: 1rem;
-    .cover {
+    @include flexColumn(1rem);
+    border-radius: 0.5rem;
+
+    .top {
       width: 100%;
       img {
         width: 100%;
         border-radius: 0.5rem;
       }
     }
-    #logo {
-      text-transform: uppercase;
-    }
-    .bottom {
-      @include flexColumn(3rem);
-      background-color: #212121;
-      border-radius: 0.5rem;
-      padding: 1rem 2rem;
-      .text {
-        h1 {
-          font-size: 2.2rem;
-          font-family: "Chillax", sans-serif;
-          font-weight: 400;
-          text-transform: uppercase;
-        }
-        p {
-          margin-top: 0.5rem;
-          font-size: 1.3rem;
-          line-height: 2rem;
-          font-weight: 500;
-          color: #9c9b98;
-          font-family: "Satoshi", sans-serif;
-        }
 
-        button {
-          display: flex;
-          background-color: transparent;
-          border: none;
-          text-decoration: none;
-          padding: 1rem 0rem;
-          align-items: center;
-          i {
-            font-size: 1.3rem;
-            font-weight: thinner;
-            margin-right: 0.5rem;
-            border-radius: 50%;
-            padding: 0.5rem;
-            background-color: #292929;
-            border: 1px solid grey;
-          }
+    .bottom {
+      background-color: #212121;
+      padding: 2rem;
+      padding-bottom: 1rem;
+      // background-color: maroon;
+      text-transform: uppercase;
+      border-radius: 0.5rem;
+      h1 {
+        padding-top: 1rem;
+      }
+      button {
+        display: flex;
+        background-color: transparent;
+        border: none;
+        text-decoration: none;
+        padding: 1rem 0rem;
+        align-items: center;
+        i {
+          font-size: 1.3rem;
+          font-size: 1.3rem;
+          font-weight: thinner;
+          margin-right: 0.5rem;
+          border-radius: 50%;
+          padding: 0.5rem;
+          background-color: #292929;
+          border: 1px solid grey;
         }
+      }
+    }
+  }
+
+  section.view7 {
+    width: 100%;
+    @include border(orange);
+    @include flex-column(1rem);
+    text-transform: uppercase;
+    background-color: #cebd63;
+    .button {
+      padding: 1rem 2rem;
+      color: white;
+      border-radius: 0.5rem;
+      background-color: #121212;
+      text-align: center;
+      width: 80%;
+      margin: 0rem 1rem;
+      cursor: pointer;
+    }
+  }
+}
+
+//mixin for mediaquerry view
+@mixin rowStyle() {
+  @include flexRow(1rem);
+  padding: 0px 3.5rem;
+  .top {
+    width: 50%;
+  }
+
+  .bottom {
+    width: 50%;
+    // @inlude border(green);
+    justify-content: space-between;
+    padding: 3rem;
+
+    .text {
+      h1 {
+        font-size: 4rem;
+      }
+      p {
+        width: 65%;
+        font-size: 1.4rem;
+        text-transform: justify;
+        margin-bottom: 2rem;
       }
     }
   }
@@ -111,195 +391,169 @@ main {
   //set this scss if device width goes more than 600px
   main {
     align-items: center;
-  }
-  section.view1 {
-    @include flexRow(1rem);
-    padding: 0px 3.5rem;
-    .cover,
-    .bottom {
-      width: 50%;
+    gap: 1rem;
+
+    section.view1 {
+      @include flexRow(1rem);
+      padding: 0px 3.5rem;
+      .top {
+        width: 50%;
+      }
+
+      .bottom {
+        width: 50%;
+        // @inlude border(green);
+        justify-content: space-between;
+        padding: 3.5rem;
+
+        .text {
+          h1 {
+            font-size: 4rem;
+            line-height: 4.5rem;
+          }
+          p {
+            width: 65%;
+            font-size: 1.4rem;
+            text-transform: justify;
+            margin-bottom: 2rem;
+          }
+        }
+      }
     }
 
-    .bottom {
-      // border: 1px solid orange;
-      justify-content: space-between;
-      padding: 3rem;
+    section.view3 {
+      @include flexRow(1rem);
+      flex-direction: row-reverse;
+      padding: 0px 3.5rem;
+      .top {
+        width: 50%;
+      }
 
-      .text {
-        h1 {
-          font-size: 4rem;
+      .bottom {
+        width: 50%;
+        // @inlude border(green);
+        justify-content: space-between;
+        .text {
+          h1 {
+            font-size: 3rem;
+          }
+          #desc {
+            display: flex;
+            flex-direction: row;
+            gap: 2rem;
+            p {
+              column-count: 2;
+              column-gap: 3rem;
+              font-size: 1.2rem;
+              margin-bottom: 2rem;
+              text-align: left;
+              background-color: transparent;
+            }
+          }
         }
-        p {
-          width: 65%;
-          font-size: 1.4rem;
-          text-transform: justify;
-          margin-bottom: 2rem;
+      }
+    }
+
+    section.view4 {
+      @include flexRow(1rem);
+      flex-direction: row-reverse;
+      padding: 0px 3.5rem;
+      .top {
+        width: 50%;
+      }
+
+      .bottom {
+        width: 50%;
+        // @inlude border(green);
+        justify-content: space-between;
+        padding: 3rem;
+
+        .text {
+          h1 {
+            font-size: 3rem;
+          }
+          #desc {
+            display: flex;
+            flex-direction: row;
+            gap: 2rem;
+            p {
+              column-count: 2;
+              column-gap: 3rem;
+              font-size: 1.2rem;
+              margin-bottom: 2rem;
+              text-align: left;
+              background-color: transparent !important;
+            }
+          }
+        }
+      }
+    }
+
+    section.view5 {
+      //   background-color: turquoise;
+      width: 100%;
+      padding: 0rem 4rem;
+      // border: 1px solid orange;
+      .cards {
+        //todo: decrease the width of cards section containing cards
+        @include flexRow(1rem);
+
+        .card {
+          height: 40rem;
+        }
+      }
+    }
+
+    section.view6 {
+      // @include border(purple);
+      @include flexRow(1rem);
+      height: 35rem;
+      padding: 0px 3.5rem;
+      .top {
+        width: 50%;
+        height: 100%;
+        img {
+          height: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      .bottom {
+        // border: 1px solid green;
+        width: 50%;
+        // @inlude border(green);
+        @include flexColumn(0rem);
+        justify-content: space-between;
+        .text {
+          h1 {
+            font-size: 3rem;
+            width: 60%;
+          }
+
+          // @include border(pink);
+          h1 {
+            font-size: 3rem;
+          }
+          button {
+            display: flex;
+            background-color: transparent;
+            border: none;
+            text-decoration: none;
+            padding: 1rem 0rem;
+            align-items: center;
+            i {
+              font-size: 1.3rem;
+              font-weight: thinner;
+              margin-right: 0.5rem;
+              border-radius: 50%;
+              padding: 0.5rem;
+              background-color: #292929;
+              border: 1px solid grey;
+            }
+          }
         }
       }
     }
   }
 }
-
-// nav {
-//   display: flex;
-//   justify-content: space-between;
-//   height: 8%;
-//   align-items: center;
-//   text-transform: uppercase;
-
-//   h4 {
-//     font-size: 1.5rem;
-//     font-family: "Satoshi";
-//     font-weight: 300;
-//   }
-
-//   ul {
-//     display: flex;
-//     list-style: none;
-//     gap: 5px;
-
-//     li button {
-//       font-size: 1rem;
-//       font-family: "Lord";
-//       padding: 15px 20px;
-//       border-radius: 10px;
-//       background-color: #1e1e1e;
-//       box-shadow: none;
-//       border: none;
-//     }
-
-//     li:nth-child(7) button {
-//       background-color: #cebd63;
-//       color: black;
-//     }
-
-//     li button:hover {
-//       cursor: pointer;
-//     }
-//   }
-// }
-
-// main {
-//   width: 100%;
-//   max-width: 100%;
-//   display: flex;
-//   gap: 10px;
-
-//   .cover {
-//     height: 100%;
-//     border-radius: 20px;
-//     overflow: hidden;
-
-//     img {
-//       height: 100%;
-//       width: 100%;
-//     }
-//   }
-
-//   .blok {
-//     background-color: #1e1e1e;
-//     border-radius: 20px;
-//     display: flex;
-//     flex-direction: column;
-//     padding: 3%;
-
-//     h1 {
-//       font-size: 4rem;
-//       font-weight: 300;
-//       padding-top: 30rem;
-//       text-transform: uppercase;
-//       font-family: "Chillax";
-//     }
-
-//     p {
-//       color: #9c9b98;
-//       font-size: 1.3rem;
-//       font-family: "Satoshi";
-//       line-height: 1.5;
-//     }
-
-//     #down-arrow {
-//       padding-top: 2rem;
-//       background-color: transparent;
-
-//       i {
-//         border-radius: 50%;
-//         padding: 10px;
-//         margin-right: 1rem;
-//         background-color: green;
-//       }
-//     }
-//   }
-// }
-
-// // 1st Page Mobile View
-
-// //************* Page 2
-// .page-2 {
-//   .stats {
-//     padding: 50px 5rem;
-//     width: 100%;
-//     ul {
-//       display: flex;
-//       // background-color: burlywood;
-//       justify-content: space-between;
-//       list-style: none;
-//       li {
-//         display: flex;
-//         flex-direction: column;
-//         justify-content: center;
-//         align-items: center;
-//       }
-//       li p:nth-child(2) {
-//         font-size: 4rem;
-//       }
-//       p {
-//         text-transform: uppercase;
-//       }
-//     }
-//   }
-// }
-
-// @media screen and (max-width: 550px) {
-//   html,
-//   body {
-//     padding: 0;
-//     margin: 0;
-//     width: 100%;
-//     // overflow-x: hidden;
-//   }
-
-//   nav {
-//     ul {
-//       display: none;
-//       .row1,
-//       .row2 {
-//         display: flex;
-//         flex-direction: row;
-//         gap: 20px;
-//       }
-//     }
-//     justify-content: center;
-//   }
-
-//   main {
-//     width: 100%;
-//     max-width: 100vw;
-//     display: flex;
-//     flex-direction: column;
-//     gap: 5px;
-//     margin: 0;
-//     padding: 0;
-
-//     .cover {
-//       width: 100%;
-//       border-radius: 0;
-//     }
-
-//     .blok {
-//       width: 100%;
-//       border-radius: 0;
-//     }
-//   }
-
-// }
