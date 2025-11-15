@@ -1,0 +1,114 @@
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+@mixin flexRowCentre() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin all100() {
+  height: 100%;
+  width: 100%;
+}
+
+section.proj1 {
+  @include all100();
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .card {
+    margin-top: 3rem;
+    background-color: blue;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid black;
+    width: 20rem;
+    height: 30rem;
+    gap: 5rem;
+    border-radius: 1rem;
+    .cover {
+      border: 1px solid red;
+      height: 10rem;
+      width: 10rem;
+      border-radius: 50%;
+      overflow: hidden;
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+
+    p {
+      font-size: 2rem;
+      color: white;
+    }
+
+    button {
+      padding: 1rem 1.2rem;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 2rem;
+      background-color: rgb(3, 255, 3);
+      border: none;
+    }
+  }
+}
+
+section.proj3 {
+  //   @include all100();
+  height: 100vh;
+  .box {
+    @include all100();
+    // border: 1px solid yellow;
+    background-color: black;
+    @include flexRowCentre();
+    position: relative;
+
+    h1 {
+      font-size: 10rem;
+      font-weight: bold;
+      color: white;
+    }
+
+    .cursor {
+      height: 20px;
+      width: 20px;
+      background-color: red;
+      border-radius: 50%;
+      position: absolute;
+      transition: all linear 70ms;
+      pointer-events: none;
+      cursor: none;
+    }
+
+    //! wouldnt work here
+    // h1:hover .cursor {
+    //   background-color: pink;
+    // }
+  }
+}
+
+section.proj4 {
+  height: 100vh;
+
+  .bar {
+    // @include all100();
+    // width: 100%;
+    height: 20%;
+
+    background-color: blueviolet;
+    border: 1px solid greenyellow;
+  }
+}

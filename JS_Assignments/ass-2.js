@@ -1,14 +1,34 @@
-// //8.Print multiplication table of 5
+//7. Check if user is eligible to vote or not 
+let age = prompt("Enter Age ");
+if(age === null){
+    console.error("You Cancelled it");
+    
+}else if(age.trim() === ""){
+    console.error("You entered nothing");
+}else if (isNaN(Number(age))) {
+    console.error("You didnt enter a number");
+    
+}else{
+    age = Number(age);
+    if (age < 18) console.log("You cannt Vote!")
+    else console.log("You can voet");
+}
+
+
+// // 8.Print multiplication table of 5
 // for (let index = 1; index <= 10; index++) {
 //   console.log(`5 * ${index} = ${5 * index}`);
 // }
 
 // //9. Count how many numbers between 1 and 15 are greater than 8
+// let count = 0;
 // for (let index = 1; index <= 15; index++) {
 //   if (index > 8) {
-//     console.log(index);
+//     count++;
 //   }
 // }
+// console.log(count);
+
 
 // //10.Ask user for password and print access status
 // let password = "testing123";
@@ -20,23 +40,23 @@
 // }
 
 // //11. Allow only 3 attempts to enter correct password
-// let password = "testing123";
-// let count = 1;
-// while (count < 4) {
-//   let input = prompt("Enter Password");
-//   if (input !== null && input.trim() === password) {
-//     console.log("Access Granted");
-//     break;
-//   } else {
-//     console.log("Password is Empty or Incorrect");
-//     count++;
-//   }
-// }
-// if (count === 4) {
-//   console.log(
-//     "Login Attempt Limit Reached\n-----------Account locked-----------"
-//   );
-// }
+let password = "testing123";
+let attempt = 1;
+while (attempt < 4) {
+  let input = prompt("Enter Password");
+  if (input !== null && input.trim() === password) {
+    console.log("Access Granted");
+    break;
+  } else {
+    console.log("Password is Empty or Incorrect");
+    attempt++;
+  }
+}
+if (attempt === 4) {
+  console.error(
+    "Login Attempt Limit Reached\n-----------Account locked-----------"
+  );
+}
 
 // // 12. Ask user for words until they type “stop”. Count how many times they typed “yes”
 
