@@ -1,7 +1,7 @@
 main = document.querySelector("main");
 
 var pbtn = document.querySelector("button");
-
+var border = ["dashed", "dotted", "hidden", "solid", "double", "groove"];
 pbtn.addEventListener("mousemove", function () {
   var d = document.createElement("div");
   d.style.height = "50px";
@@ -11,10 +11,18 @@ pbtn.addEventListener("mousemove", function () {
   var num2 = Math.random() * 100;
   var rot = Math.random() * 100;
   var sc = Math.random() * 3;
+  var b = Math.random() * 10;
+  var index = Math.floor(Math.random() * 4);
 
   var c1 = Math.floor(Math.random() * 256);
   var c2 = Math.floor(Math.random() * 256);
   var c3 = Math.floor(Math.random() * 256);
+
+  var bc1 = Math.floor(Math.random() * 256);
+  var bc2 = Math.floor(Math.random() * 256);
+  var bc3 = Math.floor(Math.random() * 256);
+
+  var t = 500 + Math.random() * 15000;
 
   d.style.position = "absolute";
   d.style.left = num1 + "%";
@@ -22,7 +30,12 @@ pbtn.addEventListener("mousemove", function () {
   d.style.rotate = rot + "deg";
   d.style.scale = sc;
   d.style.backgroundColor = `rgb(${c1},${c2},${c3})`;
+  d.style.border = `${b}px ${border[index]} rgb(${bc1},${bc2},${bc3})`;
 
-  //   console.log(num1, num2);
   main.appendChild(d);
+
+  //? For Boxes to disappear at random time
+  setTimeout(() => {
+    d.remove();
+  }, t);
 });
