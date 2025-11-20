@@ -55,3 +55,51 @@ h1.addEventListener("mouseenter", function () {
 h1.addEventListener("mouseleave", function () {
   cursr.style.backgroundColor = "red";
 });
+
+//project 4
+
+// let sect = document.querySelectorAll(".sect1");
+// let sectImg = document.querySelector(".sect1 img");
+
+// sect.addEventListener("mousemove", function (dets) {
+//   // console.log(dets.x);
+//   sectImg.style.left = dets.x + "px";
+//   sectImg.style.top = dets.y + "px";
+// });
+
+// sect.addEventListener("mouseenter", function (dets) {
+//   sectImg.style.opacity = 1;
+// });
+
+// sect.addEventListener("mouseleave", function (dets) {
+//   sectImg.style.opacity = 0;
+// });
+let sect = document.querySelectorAll(".bar");
+
+sect.forEach(function (e) {
+  console.log(e.childNodes);
+  // let img = e.childNodes[3];
+  let img = e.querySelector("img");
+  let title = e.querySelector("h1");
+
+  e.addEventListener("mouseenter", function () {
+    // console.log("Entered");
+    title.style.color = "white";
+    img.style.opacity = 1;
+    // e.style.backgroundColor = "blue";
+  });
+  e.addEventListener("mouseleave", function () {
+    // console.log("Left");
+    img.style.opacity = 0;
+    title.style.color = "orange";
+    // e.style.backgroundColor = "rgb(24, 24, 24)";
+  });
+
+  e.addEventListener("mousemove", function (dets) {
+    const x = dets.offsetX;
+    const y = dets.offsetY;
+
+    img.style.top = y + "px";
+    img.style.left = x + "px";
+  });
+});

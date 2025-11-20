@@ -12,7 +12,7 @@ pbtn.addEventListener("mousemove", function () {
   var rot = Math.random() * 100;
   var sc = Math.random() * 3;
   var b = Math.random() * 10;
-  var index = Math.floor(Math.random() * 4);
+  var index = Math.floor(Math.random() * 6);
 
   var c1 = Math.floor(Math.random() * 256);
   var c2 = Math.floor(Math.random() * 256);

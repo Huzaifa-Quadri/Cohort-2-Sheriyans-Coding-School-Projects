@@ -86,9 +86,34 @@ section.proj3 .box .cursor {
 
 section.proj4 {
   height: 100vh;
+  overflow: hidden;
 }
 section.proj4 .bar {
   height: 20%;
-  background-color: blueviolet;
-  border: 1px solid greenyellow;
+  background-color: yellow;
+  position: relative;
+  background-color: rgb(24, 24, 24);
+  border-bottom: 1px solid greenyellow;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 3vw;
+}
+section.proj4 .bar h1 {
+  z-index: 300;
+  mix-blend-mode: difference;
+  color: orange;
+  padding-left: 2rem;
+}
+section.proj4 .bar img {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  position: absolute;
+  opacity: 0;
+  transition: all linear 100ms;
+  transform: translate(-50%, -50%);
 }/*# sourceMappingURL=style.css.map */
