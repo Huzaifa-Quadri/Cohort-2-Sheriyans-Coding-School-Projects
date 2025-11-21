@@ -81,7 +81,7 @@ section.proj3 .box .cursor {
   position: absolute;
   transition: all linear 70ms;
   pointer-events: none;
-  cursor: none;
+  position: fixed;
 }
 
 section.proj4 {
@@ -90,7 +90,6 @@ section.proj4 {
 }
 section.proj4 .bar {
   height: 20%;
-  background-color: yellow;
   position: relative;
   background-color: rgb(24, 24, 24);
   border-bottom: 1px solid greenyellow;

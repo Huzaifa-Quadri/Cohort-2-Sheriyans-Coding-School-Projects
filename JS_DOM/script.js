@@ -25,16 +25,6 @@ btn.addEventListener("click", function () {
   }
 });
 
-// let cc = document.querySelector(".card");
-// document.addEventListener("mousemove", function () {
-//   let c1 = Math.floor(Math.random() * 256);
-//   let c2 = Math.floor(Math.random() * 256);
-//   let c3 = Math.floor(Math.random() * 256);
-
-//   card.style.backgroundColor = `rgb(${c1},${c2},${c3})`;
-//   console.log(`rgb(${c1},${c2},${c3})`);
-// });
-
 //*         proj - 3
 let main = document.querySelector(".box");
 let cursr = document.querySelector(".cursor");
@@ -58,22 +48,6 @@ h1.addEventListener("mouseleave", function () {
 
 //project 4
 
-// let sect = document.querySelectorAll(".sect1");
-// let sectImg = document.querySelector(".sect1 img");
-
-// sect.addEventListener("mousemove", function (dets) {
-//   // console.log(dets.x);
-//   sectImg.style.left = dets.x + "px";
-//   sectImg.style.top = dets.y + "px";
-// });
-
-// sect.addEventListener("mouseenter", function (dets) {
-//   sectImg.style.opacity = 1;
-// });
-
-// sect.addEventListener("mouseleave", function (dets) {
-//   sectImg.style.opacity = 0;
-// });
 let sect = document.querySelectorAll(".bar");
 
 sect.forEach(function (e) {
