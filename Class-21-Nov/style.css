@@ -11,19 +11,30 @@ body {
 }
 
 main {
-    height: 90vh;
+    height: 90.5vh;
     width: 100%;
     background-color: black;
     display: flex;
+    gap: 15vh;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
+
 h1 {
     color: white;
     text-align: center;
-    background-color: rgb(50, 50, 50);
     padding: 1rem 2rem;
+    background-color: rgb(50, 50, 50);
+
+}
+
+main h1 {
+    color: white;
+    text-align: center;
+    padding: 1rem 2rem;
+    background-color: rgb(50, 50, 50);
     border-radius: 10px;
 }
 
