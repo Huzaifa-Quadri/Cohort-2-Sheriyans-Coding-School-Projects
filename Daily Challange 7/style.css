@@ -13,62 +13,94 @@ body {
   background-color: #fff;
 }
 
+header .notification {
+  background: linear-gradient(to right, #037cfd, #5e50f5, #813ff2);
+  text-align: center;
+  padding: 1.2rem 0rem;
+}
+header .notification p {
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+header nav {
+  display: flex;
+  gap: 0rem;
+  justify-content: space-between;
+  padding: 2rem 2.5rem;
+  background-color: #ffffff;
+}
+header nav img {
+  height: 2vw;
+}
+header nav ul {
+  text-decoration: none;
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+header nav ul button {
+  background-color: transparent;
+  border: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  opacity: 0.8;
+  border-radius: 2rem;
+  padding: 0.8rem 1.2rem;
+}
+header nav ul button:hover {
+  background-color: rgb(242, 237, 237);
+}
+header nav ul #get_started {
+  color: white;
+  background-color: #0468d7;
+  padding: 0.8rem 2rem;
+}
+
 main {
   width: 100%;
 }
 main section.view1 {
-  border: 1px solid darkorange;
-  padding: 6rem 0;
-  background: linear-gradient(135deg, #ffeef7, #ffffff);
+  width: 100%;
   display: flex;
   flex-direction: column;
+  gap: 3rem;
   align-items: center;
-  gap: 5rem;
+  background: linear-gradient(to right top, #fcdde8 10%, #ffffff 50%);
+  padding-top: 3rem;
 }
 main section.view1 .top {
-  width: 90%;
+  width: 63%;
   display: flex;
-  justify-content: center;
-  justify-content: center;
-  flex-wrap: wrap;
+  gap: 0rem;
+  justify-content: space-between;
+  align-items: center;
 }
 main section.view1 .top .heading {
-  flex-grow: 1;
-  flex-shrink: 1;
-  flex-basis: 45%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  width: 40%;
 }
 main section.view1 .top .heading h1 {
-  margin-left: auto;
-  font-size: clamp(2rem, 4vw, 4.5rem);
-  font-weight: 700;
-  width: 60%;
-  text-align: left;
-  color: #202124;
+  line-height: 0.98;
+  font-size: 4.3rem;
+  font-weight: 600;
 }
 main section.view1 .top .cover {
-  flex: 1 1 45%;
-  display: flex;
-  justify-content: center;
+  width: 55%;
 }
 main section.view1 .top .cover img {
-  width: 100%;
-  max-width: 550px;
-  height: auto;
-  -o-object-fit: contain;
-     object-fit: contain;
+  width: 95%;
 }
 main section.view1 .bottom {
-  width: 90%;
-  max-width: 900px;
   text-align: center;
+  display: flex;
+  justify-content: center;
+  padding: 5.2rem 0rem;
 }
 main section.view1 .bottom p {
-  font-size: clamp(1.2rem, 2vw, 2rem);
-  color: #444;
-  line-height: 1.5;
+  width: 60%;
+  font-size: 2.3rem;
+  font-weight: 500;
 }
 main section.view3 {
   padding: 3rem 0;
@@ -77,7 +109,7 @@ main section.view3 {
   gap: 1.5rem;
 }
 main section.view3 .card {
-  width: 18rem;
+  width: 22%;
   display: flex;
   flex-direction: column;
   text-align: left;
@@ -94,7 +126,7 @@ main section.view3 .card h2 {
 main section.view3 .card p {
   color: black;
   line-height: 1.5;
-  font-size: 1rem;
+  font-size: 1.2rem;
   padding-bottom: 2.5rem;
 }
 main section.view3 .card img {
@@ -209,7 +241,7 @@ main section.view5 .heading .join {
   display: flex;
   gap: 1rem;
 }
-main section.view5 .heading .join button {
+main section.view5 .heading .join #b1 {
   padding: 0.7rem 1.7rem;
   width: -moz-fit-content;
   width: fit-content;
@@ -229,6 +261,7 @@ main section.view5 .cover {
 main section.view5 .cover img {
   width: 90%;
   max-width: 500px;
+  margin-right: 8vh;
 }
 main section.view6 {
   width: 100%;
@@ -344,22 +377,24 @@ main section.view7 .container .cover img {
      object-fit: cover;
 }
 main section.view8 {
+  color: white;
   display: grid;
   place-items: center;
 }
-main section.view8 .bluecard {
+main section.view8 .blue-card {
+  padding: 4rem;
   background-color: #042449;
   display: flex;
 }
-main section.view8 .bluecard .left {
+main section.view8 .blue-card .left {
   width: -moz-fit-content;
   width: fit-content;
 }
-main section.view8 .bluecard .left h2 {
-  color: red;
-}
-main section.view8 .bluecard .right {
+main section.view8 .blue-card .right {
+  height: 100%;
+  border: 1px solid green;
   background-image: url(https://storage.googleapis.com/cms-storage-bucket/get-started-background.72521e62275b24d3c37d.png);
+  background-size: cover;
 }
 
 footer {
