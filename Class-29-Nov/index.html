@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Some CSS Effects</title>
+    <style>
+      * {
+        margin: 0%;
+        padding: 0%;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        width: 100%;
+        /* height: 300vh; */
+        background-color: black;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 7rem;
+      }
+
+      .box {
+        height: 300px;
+        width: 350px;
+        background-color: grey;
+        text-align: center;
+        box-shadow: 0px 0px 50px 0px red; /* x y blur color */
+        /* Actual Syntax - x-offset y-offset blur spread color inset(inside/outside); */
+        box-shadow: 0px 0px 40px red, 0px 0px 40px blue; /*Color combination*/
+        /*//? We can use inset in box shadow to make shadow inside the box */
+        /* box-shadow: inset 0px 0px 50px 0px red; */
+      }
+      h2 {
+        font-size: 4rem;
+        text-shadow: 5px 5px 6px green;
+        /* Syntax - x y blur color */
+      }
+
+      .box2 {
+        height: 400px;
+        width: 550px;
+        background-color: grey;
+        text-align: center;
+        background-color: lightyellow;
+        background: conic-gradient(from 180deg, yellow, green, blue, red);
+        /* Syntax for Cronic Gradient - conic-gradient(from tilt(deg), color1, color2, color3, color4); */
+
+        animation: rotate 5s linear infinite;
+        /* Syntax for applying animation - 
+        
+        animation: name duration timing-function delay iteration-count direction fill-mode; */
+      }
+      /* Animation Syntax */
+      @keyframes rotate {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+      /*//? Keyframes Syntax - @keyframes action/animation {
+          from {
+            transform: <the start value>;
+          }
+          to {
+            transform: <the end value>;
+          }
+        } */
+
+      .box3 {
+        height: 300px;
+        width: 350px;
+        margin-top: 5rem;
+        text-align: center;
+        box-shadow: 0px 0px 40px blue;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        animation: colorChange 5s forwards;
+        /* forwards - will keep the last frame of animation */
+        /* infinite - will keep the animation running infinite times */
+        /* linear - will keep the animation running linearly */
+        /* delay - will delay the animation */
+        /* iteration-count - will define the number of times the animation will run */
+        /* direction - will define the direction of the animation */
+        /* fill-mode - will define the fill mode of the animation */
+      }
+
+      @keyframes colorChange {
+        from {
+          background-color: red;
+          /* border-radius: 0px; Optional */
+          /* scale: 1; Optional */
+        }
+        to {
+          background-color: blue;
+          border-radius: 50%;
+          scale: 0.5;
+        }
+      }
+
+      span {
+        color: black;
+        text-shadow: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <h2>Text Shadow <span>and</span> Box Shadow</h2>
+    </div>
+    <div class="box2"><h2>Conic Gradient</h2></div>
+
+    <div class="box3"><h2>Animation</h2></div>
+  </body>
+</html>

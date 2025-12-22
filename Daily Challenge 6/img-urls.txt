@@ -1,0 +1,10 @@
+small-logo = https://www.noon.ai/_next/static/media/logo-noon.a824a6ca.png
+
+space bg with white dots (for cards)- https://www.noon.ai/_next/static/media/partners-bg.338eeed9.png
+
+
+
+
+Clone you best recruiter block bg = https://www.noon.ai/_next/static/media/partners-bg.338eeed9.png
+
+Dynamically Scale your Recruiting team bg = https://www.noon.ai/_next/static/media/partners-bg.338eeed9.png

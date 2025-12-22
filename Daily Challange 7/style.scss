@@ -26,73 +26,111 @@ body {
   border: 1px solid $color;
 }
 
+@mixin flexRow($gap: 0rem) {
+  display: flex;
+  gap: $gap;
+}
+@mixin flexCol($gap: 0rem) {
+  display: flex;
+  flex-direction: column;
+  gap: $gap;
+}
+
+header {
+  .notification {
+    background: linear-gradient(to right, #037cfd, #5e50f5, #813ff2);
+    text-align: center;
+    padding: 1.2rem 0rem;
+    p {
+      color: white;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+  }
+  nav {
+    @include flexRow(0rem);
+    justify-content: space-between;
+    padding: 2rem 2.5rem;
+    background-color: #ffffff;
+    img {
+      height: 2vw;
+    }
+    ul {
+      text-decoration: none;
+      list-style: none;
+      @include flexRow(1.5rem);
+      align-items: center;
+
+      button {
+        background-color: transparent;
+        border: none;
+        font-size: 0.9rem;
+        font-weight: 600;
+        opacity: 0.8;
+        border-radius: 2rem;
+        padding: 0.8rem 1.2rem;
+      }
+
+      button:hover {
+        background-color: rgb(242, 237, 237);
+      }
+
+      #get_started {
+        color: white;
+        background-color: #0468d7;
+        padding: 0.8rem 2rem;
+      }
+    }
+  }
+}
 main {
   width: 100%;
   section.view1 {
-    @include border(darkorange);
-    // height: 80%;
-    padding: 6rem 0;
-    // background: linear-gradient(to top right, pink, white);
-    background: linear-gradient(135deg, #ffeef7, #ffffff);
-    display: flex;
-    flex-direction: column;
+    width: 100%;
+    @include flexCol(3rem);
     align-items: center;
-    gap: 5rem;
-
+    background: linear-gradient(to right top, #fcdde8 10%, #ffffff 50%);
+    padding-top: 3rem;
     .top {
-      // @include border(blue);
-      width: 90%;
-      display: flex;
-      justify-content: center;
-      justify-content: center;
-      // gap: 3rem;
-      flex-wrap: wrap;
+      width: 63%;
+      @include flexRow(0rem);
+      justify-content: space-between;
+      align-items: center;
+      // background-color: orange;
       .heading {
-        // background-color: greenyellow;
-        // width: 50%;
-        // @include allCentre;
-        flex-grow: 1;
-        flex-shrink: 1;
-        flex-basis: 45%;
-        display: flex;
-        flex-direction: column;
-        // text-align: center;
-        justify-content: center;
+        width: 40%;
+
         h1 {
-          margin-left: auto;
-          // font-size: 4.5rem;
-          font-size: clamp(2rem, 4vw, 4.5rem);
-          font-weight: 700;
-          width: 60%;
-          text-align: left;
-          color: #202124;
+          // width: 80%;
+          line-height: 0.98;
+          font-size: 4.3rem;
+          font-weight: 600;
         }
       }
       .cover {
-        flex: 1 1 45%;
-        display: flex;
-        justify-content: center;
-        // background-color: orange;
+        width: 55%;
+
         img {
-          width: 100%;
-          max-width: 550px;
-          height: auto;
-          object-fit: contain;
+          width: 95%;
         }
       }
     }
 
     .bottom {
-      width: 90%;
-      max-width: 900px;
       text-align: center;
+      display: flex;
+      justify-content: center;
+      padding: 5.2rem 0rem;
       p {
-        font-size: clamp(1.2rem, 2vw, 2rem);
-        // width: 60%;
-        color: #444;
-        line-height: 1.5;
+        width: 60%;
+        font-size: 2.3rem;
+        font-weight: 500;
       }
     }
+
+    // @media screen {
+
+    // }
   }
 
   section.view3 {
@@ -103,7 +141,7 @@ main {
     gap: 1.5rem;
 
     .card {
-      width: 18rem;
+      width: 22%;
       display: flex;
       flex-direction: column;
       text-align: left;
@@ -122,7 +160,7 @@ main {
       p {
         color: black;
         line-height: 1.5;
-        font-size: 1rem;
+        font-size: 1.2rem;
         padding-bottom: 2.5rem;
       }
 
@@ -210,6 +248,7 @@ main {
   section.view5 {
     width: 100%;
     background: linear-gradient(to top right, #fcfce2, #f5fbfe);
+    // gap: ;
 
     .content {
       max-width: 1200px;
@@ -255,7 +294,7 @@ main {
         display: flex;
         gap: 1rem;
 
-        button {
+        #b1 {
           padding: 0.7rem 1.7rem;
           width: fit-content;
           font-size: 0.9rem;
@@ -270,6 +309,7 @@ main {
     }
 
     .cover {
+      // background-color: yellowgreen;
       flex: 1;
       display: flex;
       justify-content: flex-end;
@@ -277,6 +317,7 @@ main {
       img {
         width: 90%;
         max-width: 500px;
+        margin-right: 8vh;
       }
     }
   }
@@ -413,22 +454,27 @@ main {
   }
 
   section.view8 {
+    color: white;
     display: grid;
     place-items: center;
     // background-color: green;
-    .bluecard {
+    .blue-card {
+      padding: 4rem;
       background-color: #042449;
       display: flex;
       .left {
         width: fit-content;
 
         h2 {
-          color: red;
+          // color: red;
         }
       }
 
       .right {
+        height: 100%;
+        @include border(green);
         background-image: url(https://storage.googleapis.com/cms-storage-bucket/get-started-background.72521e62275b24d3c37d.png);
+        background-size: cover;
       }
     }
   }
