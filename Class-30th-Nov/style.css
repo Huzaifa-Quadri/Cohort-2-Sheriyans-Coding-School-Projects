@@ -1,0 +1,64 @@
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+  background-color: rgb(59, 58, 58);
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  anchor-name: --some-anchor;
+  gap: 20px;
+}
+
+.red {
+  background-color: red;
+
+  /* Creating Positioned Element ie., 
+   anchor-name: --some-anchor; */
+}
+
+.green {
+  background-color: green;
+}
+
+.blue {
+  background-color: blue;
+}
+
+.box {
+  height: 200px;
+  width: 200px;
+}
+
+/** Whatever box we hover will become a target element */
+.box:hover {
+  anchor-name: --some-anchor;
+}
+
+.anchor {
+  background-color: white;
+  /* height: 20px;
+  width: 40px; */
+  border-radius: 10px;
+  transition: all 0.3s linear;
+
+  /* Creating anchor Element*/
+  position: absolute;
+  position-anchor: --some-anchor;
+
+  top: anchor(top);
+  left: anchor(left);
+  right: anchor(right);
+  bottom: anchor(bottom);
+
+  mix-blend-mode: difference;
+  pointer-events: none;
+}
